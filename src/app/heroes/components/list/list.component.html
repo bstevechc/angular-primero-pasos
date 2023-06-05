@@ -1,0 +1,38 @@
+<h3>Listado de Heroes</h3>
+<!-- If else uso -->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3>
+    Heroe borrado
+    <small class="text-danger"> {{ deletedHero }} </small>
+  </h3>
+</div>
+
+<!-- Un ng template es un div invisible pero que no es fisico, solo sirve para mostrar contenido -->
+<!-- Para el else uso lo que se va a mostrar en caso de que el if evalue false mediante el identificador que le di arriba -->
+<!-- El ng template nos sirve para no daniar la estructura html ya que al inspeccionar no hay nada mas que el h3 -->
+<ng-template #nothingWasDeleted>
+  <h3>
+    No ha borrado nada.
+  </h3>
+</ng-template>
+
+
+<button *ngIf="heroNames.length > 0" (click)="removeLastHero()" class="btn btn-outline-danger">
+  Borrar ultimo Heroe
+</button>
+
+<!-- Desaparezco el boton cuando no hay mas que borrar en el array -->
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item">
+    {{ name }}
+  </li>
+  <!-- <li class="list-group-item">
+    Ironman
+  </li>
+  <li class="list-group-item">
+    Hulk
+  </li>
+  <li class="list-group-item">
+    Thor
+  </li> -->
+</ul>
