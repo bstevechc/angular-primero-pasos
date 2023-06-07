@@ -1,0 +1,24 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Envio los valores del padre al componente hijo que debe usar -->
+    <!-- !Cuando quiere escuchar un emit en () esta el emit del hijo y en la derecha la funcion del padre  -->
+    <!-- <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list> -->
+    <!-- Con iyeccion de dependencia quedaria asi -->
+    <!-- <dbz-list [characterList]="dbzService.characters" (onDelete)="dbzService.onDeleteCharacter($event)"></dbz-list> -->
+    <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
+
+  </div>
+  <div class="col">
+    <!-- !Cuando quiere escuchar un emit en () esta el emit del hijo y en la derecha la funcion del padre  -->
+    <!-- Vamos a agregar un evento y que es lo que va a pasar en el componente padre cuando se sucite el evento -->
+    <!-- Para recibir el this.character del hijo (add-character.component.ts) lo hacenis
+      mediante el $event -->
+    <!-- <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character> -->
+    <!-- Con iyeccion de dependencia quedaria asi -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+  </div>
+</div>

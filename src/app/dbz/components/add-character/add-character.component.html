@@ -1,0 +1,32 @@
+<h4>Agregar Personaje</h4>
+    <form (ngSubmit)="emitCharacter()" class="row">
+      <!-- En caso de necesitar que el input se mantenga aislado
+      del formulario principal, es decir que no sea necesario ponerlo
+      se agrega el [ngModelOptions]="{standalone: true}" y no se le agrega un name
+      en caso de querer que los inputs sean parte de un formulario, se debe agregarles
+      un name a cada input -->
+
+      <!-- Estos formularios funcionan en 2way es decir sise actualiza
+        en el .ts se actualiza en la vista o si se actualiza en la vista (html)
+        tambien se actualiza en el .ts -->
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="character.name"
+        class="form-control mb-2"
+        placeholder="Nombre">
+      <input
+        type="number"
+        name="power"
+        [(ngModel)]="character.power"
+        class="form-control mb-2"
+        placeholder="Poder">
+
+      <button type="submit" class="btn btn-primary">
+        Agregar
+      </button>
+      <!-- Pipes (tuberia)  es una manera de mostrar un objeto en otrp formato -->
+      <!-- Si imprimimos solo {{ character }} la salida es object Object -->
+      <!-- Si imprimimos con el pipe nos muestra en formato json las propiedades del character -->
+      <!-- {{ character | json }} -->
+    </form>
