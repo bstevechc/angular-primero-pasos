@@ -17,17 +17,17 @@ export class DbzService {
   [
     {
       id: uuid(),
-      name: 'Krillin',
+      name: 'Persona 1',
       power: 1000
     },
     {
       id: uuid(),
-      name: 'Goku',
+      name: 'Persona 2',
       power: 9500
     },
     {
       id: uuid(),
-      name: 'Vegeta',
+      name: 'Persona 3',
       power: 7500
     }
   ];
